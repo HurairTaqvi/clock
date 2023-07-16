@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clock</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="clock">
+      <div class="clock-face" id="app">
+        <time datetime="12:00">XII</time>
+        <time datetime="1:00">I</time>
+        <time datetime="2:00">II</time>
+        <time datetime="3:00">III</time>
+        <time datetime="4:00">IV</time>
+        <time datetime="5:00">V</time>
+        <time datetime="6:00">VI</time>
+        <time datetime="7:00">VII</time>
+        <time datetime="8:00">VIII</time>
+        <time datetime="9:00">IX</time>
+        <time datetime="10:00">X</time>
+        <time datetime="11:00">XI</time>
+        <span class="arm seconds"></span>
+        <span class="arm minutes"></span>
+        <span class="arm hours"></span>
+      </div>
+    </div>
+
+    <script>
+      /* to set current time */
+      const time = new Date();
+      const hour = -3600 * (time.getHours() % 12);
+      const mins = -60 * time.getMinutes();
+      app.style.setProperty("--_dm", `${mins}s`);
+      app.style.setProperty("--_dh", `${hour + mins}s`);
+    </script>
+  </body>
+</html>
